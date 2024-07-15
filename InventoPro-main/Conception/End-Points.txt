@@ -1,0 +1,200 @@
+				+----------+-----------------------------------------------+----------------------------------------+
+				| Method   | URI                                           | Action                                 |
+				+----------+-----------------------------------------------+----------------------------------------+
+				| GET      | users                                         | UserController@index                   |
+				| GET      | users/{id}                                    | UserController@show                    |
+				| POST     | users                                         | UserController@store                   |
+				| PUT|PATCH| users/{id}                                    | UserController@update                  |
+				| GET      | users/verify/{token}                          | UserController@verify                  |
+				| DELETE   | users/{id}                                    | UserController@destroy                 |
+				| GET      | users/{id}/resend                             | UserController@resend                  |
+				| POST     | users/{id}/role/{id}                      | UserController@assignRole              |
+				| GET      | staff/{id}/info                               | UserController@printInfo
+
+				| POST     | admins/login                                  | AdminController@login                  |
+  				| GET      | admins/{id}/account                           | AdminController@showAccount            |
+  				| POST     | admins/{id}/account                           | AdminController@assignAccount          |
+
+				| GET      | roles                			   | RoleController@index		    |
+				| GET      | roles/{id}                                    | RoleController@show                    |
+				| POST     | roles                                         | RoleController@store                   |
+				| PUT|PATCH| roles/{id}                                    | RoleController@update                  |
+				| DELETE   | roles/{id}                                    | RoleController@destroy                 |
+				| GET      | roles/{id}/users                              | RoleController@getUsers                |
+
+				| GET      | absences                                      | AbsenceController@index                |
+  				| GET      | absences/{id}                                 | AbsenceController@show                 |
+  				| POST     | absences                                      | AbsenceController@store                |
+ 				| PUT|PATCH| absences/{id}                                 | AbsenceController@update               |
+  				| DELETE   | absences/{id}                                 | AbsenceController@destroy              |
+  				| GET      | users/{id}/absences                           | AbsenceController@searchByStaff        |
+  				| GET      | absences/{id}/details                         | AbsenceController@printDetails         |
+
+				| GET      | presences                                     | PresenceController@index               |
+ 				| GET      | presences/{id}                                | PresenceController@show                |
+  				| POST     | presences                                     | PresenceController@store               |
+  				| PUT|PATCH| presences/{id}                                | PresenceController@update              |
+  				| DELETE   | presences/{id}                                | PresenceController@destroy             |
+  				| GET      | staff/{id}/presences                     	   | PresenceController@searchByStaff       |
+  				| GET      | presences/{id}/details                        | PresenceController@printDetails        |
+
+				| GET      | payrolls                                      | PayrollController@index                |
+ 				| GET      | payrolls/{id}                                 | PayrollController@show                 |
+  				| POST     | payrolls                                      | PayrollController@store                |
+  				| PUT|PATCH| payrolls/{id}                                 | PayrollController@update               |
+  				| DELETE   | payrolls/{id}                                 | PayrollController@destroy              |
+  				| GET      | staff/{id}/payroll                            | PayrollController@searchByStaff        |
+  				| GET      | payrolls/{id}/details                         | PayrollController@printDetails         |
+  				| GET      | payrolls/{id}/calculateNetSalary              | PayrollController@calculateNetSalary   |
+
+				| GET      | expenses                                      | ExpenseController@index                |
+  				| GET      | expenses/{id}                                 | ExpenseController@show                 |
+  				| POST     | expenses                                      | ExpenseController@store                |
+  				| PUT|PATCH| expenses/{id}                                 | ExpenseController@update               |
+  				| DELETE   | expenses/{id}                                 | ExpenseController@destroy              |
+  				| GET      | staff/{id}/expenses                           | ExpenseController@searchByStaff        |
+  				| GET      | expenses/{id}/details                         | ExpenseController@printDetails         |
+
+				| GET      | accounts                                      | AccountController@index                |
+  				| GET      | accounts/{id}                                 | AccountController@show                 |
+  				| POST     | accounts                                      | AccountController@store                |
+  				| PUT|PATCH| accounts/{id}                                 | AccountController@update               |
+  				| DELETE   | accounts/{id}                                 | AccountController@destroy              |
+
+ 				| GET      | customers                                     | CustomerController@index               |
+  				| GET      | customers/{id}                                | CustomerController@show                |
+  				| POST     | customers                                     | CustomerController@store               |
+  				| PUT|PATCH| customers/{id}                                | CustomerController@update              |
+  				| DELETE   | customers/{id}                                | CustomerController@destroy             |
+  				| GET      | customers/{id}/account                        | CustomerController@showAccount         |
+  				| POST     | customers/{id}/account                        | CustomerController@assignAccount       |
+  				| GET      | customers/{id}/credits                        | CustomerController@showCredits         |
+  				| POST     | customers/{id}/payment-method                 | CustomerController@addPaymentMethod    |
+  				| DELETE   | customers/{id}/payment-method                 | CustomerController@removePaymentMethod |
+  				| POST     | customers/{id}/orders                         | CustomerController@addOrder            |
+  				| PUT|PATCH| customers/{id}/status                         | CustomerController@updateStatus        |
+  				| GET      | customers/{id}/total-spent                    | CustomerController@calculateTotalSpent |
+  				| GET      | customers/{id}/details                        | CustomerController@printDetails        |
+
+				| GET      | credits                                       | CustomerCreditController@index         |
+  				| GET      | credits/{id}                                  | CustomerCreditController@show          |
+  				| POST     | credits                                       | CustomerCreditController@store         |
+  				| PUT|PATCH| credits/{id}                                  | CustomerCreditController@update        |
+  				| DELETE   | credits/{id}                                  | CustomerCreditController@destroy       |
+  				| POST     | credits/{id}/items                            | CustomerCreditController@addItem       |
+  				| DELETE   | credits/{id}/items                            | CustomerCreditController@removeItem    |
+  				| GET      | credits/{id}/total-amount                     | CustomerCreditController@calculateTotalAmount |
+  				| PUT|PATCH| credits/{id}/status                           | CustomerCreditController@updateStatus  |
+  				| GET      | credits/{id}/details                          | CustomerCreditController@printDetails  |
+
+				| GET      | orders                                        | OrderCustomerSideController@index      |
+  				| GET      | orders/{id}                                   | OrderCustomerSideController@show       |
+  				| POST     | orders                                        | OrderCustomerSideController@store      |
+  				| PUT|PATCH| orders/{id}                                   | OrderCustomerSideController@update     |
+  				| DELETE   | orders/{id}                                   | OrderCustomerSideController@destroy    |
+ 				| POST     | orders/{id}/items                             | OrderCustomerSideController@addItem    |
+  				| DELETE   | orders/{id}/items                             | OrderCustomerSideController@removeItem |
+  				| GET      | orders/{id}/total-cost                        | OrderCustomerSideController@calculateTotalCost |
+  				| PUT|PATCH| orders/{id}/status                            | OrderCustomerSideController@updateStatus |
+  				| GET      | orders/{id}/details                           | OrderCustomerSideController@printDetails |
+				| GET      | orders/{id}/payments                          | PaymentCustomerSideController@pay     |
+				| GET      | orders/{id}/payments                          | PaymentCustomerSideController@indexForOrder     |
+				| GET      | orders/{id}/payments/{Pid}  		   | PaymentCustomerSideController@showForOrder      |
+				| POST     | orders/{id}/payments       		   | PaymentCustomerSideController@storeForOrder     |
+				| PUT      | orders/{id}/payments/{pId}  		   | PaymentCustomerSideController@updateForOrder    |
+				| DELETE   | orders/{id}/payments/{pid}  		   | PaymentCustomerSideController@destroyForOrder   |
+
+				| GET      | products                                      | ProductController@index               |
+  				| GET      | products/{id}                                 | ProductController@show                |
+  				| POST     | products                                      | ProductController@store               |
+  				| PUT|PATCH| products/{id}                                 | ProductController@update              |
+  				| DELETE   | products/{id}                                 | ProductController@destroy             |
+				| POST     | products/{id}/category                        | ProductController@setCategory            |
+  				| POST     | products/{id}/bar-code                        | ProductController@generateBarCode     |
+				| POST     | products/{id}/stock                           | ProductController@addStock            |
+  				| PUT|PATCH| products/{id}/stock                           | ProductController@updateStock         |
+  				| PUT|PATCH| products/{id}/discount                        | ProductController@applyDiscount       |
+  				| DELETE   | products/{id}/discount                        | ProductController@deleteDiscount      |
+  				| GET      | products/{id}/details                         | ProductController@printProductDetails |
+				| GET      | products/{id}/stock-level                     | ProductController@checkStockLevel     |
+				| GET      | products/{id}/inventory-details               | ProductController@printInventoryDetails|
+				| POST     | products/{id}/inventory/inflow                | ProductController@addInventoryInflow  |
+				| POST     | products/{id}/inventory/outflow               | ProductController@addInventoryOutflow |
+				| POST     | products/{id}/inventory/inter-transfer        | ProductController@addInventoryInterTransfer |
+
+				| POST     | categories/{id}/products          		   | CategoryController@addProduct            |
+				| DELETE   | categories/{id}/products/{pId}	           | CategoryController@removeProduct         |
+				| GET      | categories/{id}/products                      | CategoryController@getProducts           |
+
+				| GET      | bills                                         | BillCustomerSideController@index            |
+				| GET      | bills/{id}                                    | BillCustomerSideController@show             |
+				| POST     | bills                                         | BillCustomerSideController@store            |
+				| PUT      | bills/{id}                                    | BillCustomerSideController@update           |
+				| DELETE   | bills/{id}                                    | BillCustomerSideController@destroy          |
+				| POST     | bills/{id}/items                              | BillCustomerSideController@addItem          |
+				| DELETE   | bills/{id}/items/{id}                         | BillCustomerSideController@removeItem       |
+				| GET      | bills/{id}/subtotal                           | BillCustomerSideController@calculateSubtotal |
+				| GET      | bills/{id}/taxes                              | BillCustomerSideController@calculateTaxes   |
+				| GET      | bills/{id}/total-amount                       | BillCustomerSideController@calculateTotalAmount |
+				| PUT      | bills/{id}/discount/{ref}                     | BillCustomerSideController@applyDiscount    |
+				| GET      | bills/{id}/details                            | BillCustomerSideController@printBill        |
+				| GET      | bills/{id}/export                             | BillCustomerSideController@exportBill       |
+
+				| POST     | orders/{id}/delivery-notes                    | DeliveryNoteCltController@addDeliveryNote  |
+				| PUT      | delivery-notes/{id}                           | DeliveryNoteCltController@editDeliveryNote |
+				| DELETE   | delivery-notes/{id}                           | DeliveryNoteCltController@deleteDeliveryNote |
+
+				| POST   | payments/{id}/transactions       	           | PaymentCustomerController@addTransaction    |
+				| PUT    | transactions/{id}               		   | PaymentCustomerController@editTransaction   |
+				| DELETE | transactions/{id}                		   | PaymentCustomerController@deleteTransaction |
+				| GET    | transactions/{id}                 		   | PaymentCustomerController@searchTransaction |
+				| POST   | payments/{id}/transactions/record   		   | PaymentCustomerController@recordTransaction |
+				| GET    | payments/{id}/transactions/details  		   | PaymentCustomerController@printTransactionDetails|
+
+
+				| POST     | suppliers                                     | SupplierController@addSupplier         |
+				| PUT      | suppliers/{id}              	           | SupplierController@editSupplier        |
+				| DELETE   | suppliers/{id}                                | SupplierController@deleteSupplier      |
+				| GET      | suppliers/{id}                                | SupplierController@searchSupplier      |
+				| POST     | suppliers/{id}/payment-methods                | SupplierController@addPaymentMethod    |
+				| DELETE   | suppliers/{id}/payment-methods/{method}       | SupplierController@removePaymentMethod |
+				| POST     | suppliers/{id}/orders                         | SupplierController@addOrder            |
+				| PUT      | suppliers/{id}/status                         | SupplierController@updateStatus        |
+				| GET      | suppliers/{id}/total-given                    | SupplierController@calculateTotalGiven |
+				| GET      | suppliers/{id}/details                        | SupplierController@printClientDetails  |
+				| POST     | suppliers/{id}/orders                         | SupplierController@createOrder         |
+				| PUT      | suppliers/{id}/orders/{oId}                   | SupplierController@editOrder           |
+				| DELETE   | suppliers/{id}/orders/{oId}    		   | SupplierController@deleteOrder         |
+				| GET      | suppliers/{id}/orders/{oId}    		   | SupplierController@searchOrder         |
+				| POST     | suppliers/{id}/orders/{oId}/items		   | SupplierController@addItem             |
+				| DELETE   | suppliers/{id}/orders/{oId}/items/{iId}	   | SupplierController@deleteItem          |
+				| GET      | suppliers/{id}/orders/{oId}/total-cost	   | SupplierController@calculateTotalCost  |
+				| PUT      | suppliers/{id}/orders/{oId}/status 	   | SupplierController@updateStatus        |
+				| GET      | suppliers/{id}/orders/{oId}/details	   | SupplierController@printPurchaseDetails|
+
+				| POST     | orders/{id}/products                	   | OrderFromSupplierController@addProduct |
+				| DELETE   | orders/{id}/products/{pId}    		   | OrderFromSupplierController@removeProduct|
+			        | GET      | orders/{id}/products                	   | OrderFromSupplierController@getProducts|
+				| POST     | orders/{id}/payments                          | OrderFromSupplierController@pay        |
+				| GET      | orders/{id}/payments     			   | OrderFromSupplierController@indexForOrder|
+				| GET      | orders/{id}/payments/{pId} 		   | OrderFromSupplierController@showForOrder |
+				| POST     | orders/{id}/payments       		   | OrderFromSupplierController@storeForOrder|
+				| PUT      | orders/{id}/payments/{pId}  		   | OrderFromSupplierController@updateForOrder|
+				| DELETE   | orders/{id}/payments/{pId}  		   | OrderFromSupplierController@destroyForOrder|
+
+
+				| POST   | payments/{id}/transactions       	           | PaymentSupplierController@addTransaction    |
+				| PUT    | transactions/{id}               		   | PaymentSupplierController@editTransaction   |
+				| DELETE | transactions/{id}                		   | PaymentSupplierController@deleteTransaction |
+				| GET    | transactions/{id}                 		   | PaymentSupplierController@searchTransaction |
+				| POST   | payments/{id}/transactions/record   		   | PaymentSupplierController@recordTransaction |
+				| GET    | payments/{id}/transactions/details  		   | PaymentSupplierController@printTransactionDetails|
+
+
+				| POST   | accounts/{id}/treasury         		   | TreasuryController@addTreasury         |
+				| PUT    | treasury/{id}                  		   | TreasuryController@editTreasury        |
+				| DELETE | treasury/{id}                 		   | TreasuryController@deleteTreasury      |
+				| GET    | treasury/{id}/balance         		   | TreasuryController@calculateBalance    |
+				| GET    | treasury/{id}/details          		   | TreasuryController@printTreasuryDetails|
+				| POST   | treasury/{id}/generate-report  		   | TreasuryController@generateReport      |
+				+---------+-----------------------------------------------+----------------------------------------+	
